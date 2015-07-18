@@ -6,33 +6,33 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
+import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Jesz on 18-Jul-15.
  */
 public class SplashScreen extends Activity {
-    /*GoogleCloudMessaging gcm;
+    public static final String PROPERTY_REG_ID = "registration_id";
+    GoogleCloudMessaging gcm;
     AtomicInteger msgId = new AtomicInteger();
-    SharedPreferences prefs;*/
+    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Make sure the app is registered with GCM and with the server
- /*       prefs = getSharedPreferences(SplashScreen.class.getSimpleName(),
+       prefs = getSharedPreferences(SplashScreen.class.getSimpleName(),
                 Context.MODE_PRIVATE);
         setContentView(R.layout.main);
 
 
+        gcm = GoogleCloudMessaging.getInstance(this);
         ApplicationInit.setREGISTRATION_KEY(prefs.getString(PROPERTY_REG_ID, null));
 
-        // If there is no registration ID, the app isn't registered.
-        // Call registerBackground() to register it.
-        if (ApplicationInit.getREGISTRATION_KEY()== null){
-            registerBackground();
-        }
 
-        gcm = GoogleCloudMessaging.getInstance(this);*/
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
@@ -44,6 +44,15 @@ public class SplashScreen extends Activity {
                     e.printStackTrace();
                 }finally {
                     Intent openMain = new Intent("com.dualtech.chat.MAINACTIVITY");
+                // If there is no registration ID, the app isn't registered.
+                    if (ApplicationInit.getREGISTRATION_KEY()== null){
+                        openMain = new Intent("com.dualtech.chat.REG");
+                        /*try {
+                            gcm.register(ApplicationInit.getMobile_number());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }*/
+                    }
                     startActivity(openMain);
                 }
             }

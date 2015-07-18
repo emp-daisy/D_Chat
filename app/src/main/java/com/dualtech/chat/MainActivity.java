@@ -30,12 +30,12 @@ public class MainActivity extends TabActivity {
                 //.setIndicator("", res.getDrawable(R.drawable.icon_apple_config))
                 .setContent(FeedIntent);
 // Contact tab
-        Intent cotactIintent = new Intent().setClass(this,ContactView.class);
+        Intent contactIntent = new Intent().setClass(this,ContactView.class);
         TabHost.TabSpec contactTab = tabHost
                 .newTabSpec("Contacts")
                         .setIndicator("CONTACTS")
                 //.setIndicator("", res.getDrawable(R.drawable.icon_windows_config))
-                .setContent(cotactIintent);
+                .setContent(contactIntent);
 
         tabHost.addTab(chatTab);
         tabHost.addTab(feedTab);

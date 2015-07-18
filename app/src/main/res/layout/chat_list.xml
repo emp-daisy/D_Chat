@@ -10,4 +10,16 @@
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REG ID: "
+        android:id="@+id/rid" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile Number : "
+        android:id="@+id/mid" />
+
 </LinearLayout>

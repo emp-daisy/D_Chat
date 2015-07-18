@@ -10,8 +10,11 @@ import android.widget.TextView;
 public class ChatView extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //TextView textview = new TextView(this);
-        //textview.setText("This is Chat tab");
         setContentView(R.layout.chat_list);
+        TextView mb = (TextView) findViewById(R.id.mid);
+        TextView rb = (TextView) findViewById(R.id.rid);
+
+        mb.setText(mb.getText() + ApplicationInit.getMobile_number());
+        mb.setText(rb.getText() + ApplicationInit.getREGISTRATION_KEY());
     }
 }

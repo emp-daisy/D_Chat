@@ -18,15 +18,13 @@ public class ApplicationInit extends Application {
         return API_KEY;
     }
 
-    public static String getProjectId(){
-        return PROJECT_ID;
-    }
+    public static String getProjectNO(){ return PROJECT_NO;}
 
-    public static void setMobileNum(String m){
+    public static void setMobile_number(String m){
         mobile_number = m;
     }
 
-    public String getMobile_number(){
+    public static String getMobile_number(){
         return mobile_number;
     }
 
