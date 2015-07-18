@@ -15,6 +15,6 @@ public class ChatView extends Activity {
         TextView rb = (TextView) findViewById(R.id.rid);
 
         mb.setText(mb.getText() + ApplicationInit.getMobile_number());
-        mb.setText(rb.getText() + ApplicationInit.getREGISTRATION_KEY());
+        rb.setText(rb.getText() + ApplicationInit.getREGISTRATION_KEY());
     }
 }

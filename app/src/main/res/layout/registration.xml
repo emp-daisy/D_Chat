@@ -12,7 +12,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"
         android:ems="10"
         android:id="@+id/user_name"
         android:layout_gravity="center_horizontal" />
