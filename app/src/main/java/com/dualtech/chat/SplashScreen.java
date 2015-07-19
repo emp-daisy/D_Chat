@@ -42,7 +42,7 @@ public class SplashScreen extends Activity {
                     Intent openMain = new Intent("com.dualtech.chat.MAINACTIVITY");
                 // If there is no registration ID, the app isn't registered.
                     if (ApplicationInit.getREGISTRATION_KEY()== null){
-                        openMain = new Intent("com.dualtech.chat.REG");
+                        openMain = new Intent("com.dualtech.chat.VERIFY_NUMBER");
                         }
                     startActivity(openMain);
                 }
