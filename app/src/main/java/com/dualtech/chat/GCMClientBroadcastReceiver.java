@@ -1,6 +1,8 @@
 package com.dualtech.chat;
 
 
+import android.app.Activity;
+import android.app.IntentService;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -14,17 +16,9 @@ public class GCMClientBroadcastReceiver extends WakefulBroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         //react to event
 
-        /*if (intent.getExtras ().get("from").equals (ApplicationInit.getProjectId()){
-            ComponentName comp = new ComponentName(
-                    IntentService.class.getPackage().getName(),
-                    IntentService.class.getName());
-            startWakefulService(context, (intent.setComponent(comp)));
-            // abort the broadcast
-            setResultCode(Activity.RESULT_CANCEL);
-        } else{
-        // don't abort the broadcast
+        ComponentName comp = new ComponentName(context.getPackageName(), IntentSevice.class.getName());
+        startWakefulService(context, (intent.setComponent(comp)));
         setResultCode(Activity.RESULT_OK);
-    }*/
     }
 
 }
